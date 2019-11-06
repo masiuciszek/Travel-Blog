@@ -3,6 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './styled/GlobalStyles';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 export const theme = {
   red: '#FF0000',
@@ -12,7 +14,7 @@ export const theme = {
   offWhite: '#EDEDED',
   maxWidth: '1000px',
   bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)',
-  primaryColor: '#2574a9',
+  primaryColor: '#3fd0d4',
   mainWhite: '#fff',
   offWhite2: '#f7f7f7',
   mainBlack2: '#222',
@@ -28,7 +30,9 @@ const Layout = ({ children }) => (
   <>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <Navbar />
       <main>{children}</main>
+      <Footer />
     </ThemeProvider>
   </>
 );

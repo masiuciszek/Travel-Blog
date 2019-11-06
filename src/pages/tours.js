@@ -1,12 +1,15 @@
 import React from 'react';
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
+
+import Layout from '../components/Layout';
 
 const Tours = () => {
   let a;
   return (
-    <div>
-      <h1>Tours</h1>
-    </div>
+    <>
+      <Layout>
+        <h1>Tours</h1>
+      </Layout>
+    </>
   );
 };
 export default Tours;

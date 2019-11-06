@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import Layout from '../components/Layout';
 
 const Blog = () => {
   let a;
   return (
-    <div>
-      <h1>Blog</h1>
-    </div>
+    <>
+      <Layout>
+        <h1>Blog</h1>
+      </Layout>
+    </>
   );
 };
 

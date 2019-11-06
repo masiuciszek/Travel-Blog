@@ -73,4 +73,12 @@ main {
   flex-direction: column;
 }
 
+ul,li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
 `;
