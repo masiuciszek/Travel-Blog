@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './styled/GlobalStyles';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -38,7 +38,7 @@ const Layout = ({ children }) => (
 );
 
 Layout.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.array.isRequired,
 };
 
 export default Layout;

@@ -1,5 +1,5 @@
 // @ts-nocheck
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import styled from 'styled-components';
@@ -7,18 +7,43 @@ import { MenuAltRight } from 'styled-icons/boxicons-regular/MenuAltRight';
 import { links, icons } from '../constants/utils';
 import logo from '../images/logo.svg';
 import useToggle from '../hooks/useToggle';
+import { fadeFromTopDown } from '../utils/animations';
 
 const Navbar = () => {
   const [show, toggleShow] = useToggle(false);
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
+
+  useEffect(() => {
+    const handleWidth = e => {
+      console.log('resized to: ', window.innerWidth, 'x', window.innerHeight);
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      });
+    };
+
+    window.addEventListener('resize', handleWidth);
+  }, [dimensions]);
+
+  console.log(dimensions);
 
   return (
-    <StyledNav show={show}>
+    <StyledNav>
       <div className="logo-wrapper">
         <img src={logo} alt="logo" />
         {show && (
           <MobileList>
             {' '}
-            <li>hello</li>{' '}
+            {links.map((link, index) => (
+              <li key={index}>
+                <AniLink fade to={link.path}>
+                  {link.text}{' '}
+                </AniLink>
+              </li>
+            ))}
           </MobileList>
         )}
       </div>
@@ -45,6 +70,7 @@ const StyledNav = styled.nav`
   display: flex;
   padding: 1rem;
   height: ${props => (props.show ? '216px' : 'auto')};
+  animation: ${fadeFromTopDown} ease-in-out 0.5s;
   span {
     cursor: pointer;
   }
@@ -55,7 +81,7 @@ const StyledNav = styled.nav`
       margin-top: 2rem;
       a {
         margin: 0.4rem;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         text-transform: uppercase;
         color: ${props => props.theme.primaryColor};
         transition: ${props => props.theme.mainTransition};
@@ -81,6 +107,22 @@ const StyledNav = styled.nav`
 
 const MobileList = styled.ul`
   transition: ${props => props.theme.mainTransition};
+  animation: ${fadeFromTopDown} ease-in-out 1.3s;
+
+  li {
+    margin: 0.4rem;
+  }
+  a {
+    margin: 0.4rem;
+    font-size: 1rem;
+    padding: 0.2rem;
+    text-transform: uppercase;
+    color: ${props => props.theme.primaryColor};
+    transition: ${props => props.theme.mainTransition};
+    &:hover {
+      background: ${props => props.theme.black};
+    }
+  }
 `;
 
 export default Navbar;
