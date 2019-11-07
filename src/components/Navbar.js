@@ -83,6 +83,9 @@ const StyledNav = styled.nav`
         text-transform: uppercase;
         color: ${props => props.theme.primaryColor};
         transition: ${props => props.theme.mainTransition};
+        &:hover {
+          color: ${props => props.theme.black};
+        }
       }
     }
     .icons {

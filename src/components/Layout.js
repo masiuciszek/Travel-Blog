@@ -17,7 +17,7 @@ export const theme = {
   primaryColor: '#3fd0d4',
   mainWhite: '#fff',
   offWhite2: '#f7f7f7',
-  mainBlack2: '#222',
+  mainBlack: '#222',
   mainGrey: '#ececec',
   darkGrey: '#afafaf',
   mainTransition: 'all 0.3s linear',
