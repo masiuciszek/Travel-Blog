@@ -11,31 +11,13 @@ import { fadeFromTopDown } from '../utils/animations';
 
 const Navbar = () => {
   const [show, toggleShow] = useToggle(false);
-  const [dimensions, setDimensions] = useState({
-    height: window.innerHeight,
-    width: window.innerWidth,
-  });
-
-  useEffect(() => {
-    const handleWidth = e => {
-      console.log('resized to: ', window.innerWidth, 'x', window.innerHeight);
-      setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth,
-      });
-    };
-
-    window.addEventListener('resize', handleWidth);
-  }, [dimensions]);
-
-  console.log(dimensions);
 
   return (
     <StyledNav>
       <div className="logo-wrapper">
         <img src={logo} alt="logo" />
         {show && (
-          <MobileList>
+          <MobileList className="mobile-list">
             {' '}
             {links.map((link, index) => (
               <li key={index}>
@@ -56,6 +38,18 @@ const Navbar = () => {
             </AniLink>
           </li>
         ))}
+        <div className="icons">
+          {icons.map((icon, index) => (
+            <a
+              key={index}
+              href={icon.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {icon.icon}
+            </a>
+          ))}
+        </div>
       </ul>
       <span className="toggleIcon">
         <MenuAltRight size="35" onClick={toggleShow} />
@@ -71,14 +65,18 @@ const StyledNav = styled.nav`
   padding: 1rem;
   height: ${props => (props.show ? '216px' : 'auto')};
   animation: ${fadeFromTopDown} ease-in-out 0.5s;
+  align-items: center;
+  position: relative;
   span {
     cursor: pointer;
   }
   .large-screen-list {
     display: flex;
     margin-left: auto;
+    align-items: center;
+
     li {
-      margin-top: 2rem;
+      /* margin-top: 2rem; */
       a {
         margin: 0.4rem;
         font-size: 1.1rem;
@@ -87,18 +85,37 @@ const StyledNav = styled.nav`
         transition: ${props => props.theme.mainTransition};
       }
     }
+    .icons {
+      margin: 0 1rem;
+      a {
+        color: ${props => props.theme.black};
+        margin: 1rem;
+        display: inline-block;
+        transition: ${props => props.theme.mainTransition};
+        &:hover {
+          color: ${props => props.theme.primaryColor};
+          transform: scale(1.1);
+        }
+      }
+    }
   }
   .toggleIcon {
     margin-left: auto;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 750px) {
     .toggleIcon {
       padding: 0.5rem 1.4rem;
       display: none;
     }
+    .mobile-list {
+      display: none;
+    }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
     .large-screen-list {
       display: none;
     }

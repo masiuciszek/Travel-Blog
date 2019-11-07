@@ -3,15 +3,15 @@ import { Facebook, Twitter, Instagram } from 'styled-icons/feather';
 
 export const icons = [
   {
-    icon: <Facebook />,
+    icon: <Facebook size="30" />,
     url: 'https://www.marcellable.com/',
   },
   {
-    icon: <Twitter />,
+    icon: <Twitter size="30" />,
     url: 'https://twitter.com/CiszekMarcell',
   },
   {
-    icon: <Instagram />,
+    icon: <Instagram size="30" />,
     url: 'https://www.instagram.com/masiuciszek/?hl=sv',
   },
 ];
