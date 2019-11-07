@@ -25,6 +25,12 @@ const StyledFooter = styled.footer`
       }
     }
   }
+  .copy-right {
+    padding: 0.3rem;
+    small {
+      letter-spacing: ${props => props.theme.mainSpacing};
+    }
+  }
 `;
 
 const Footer = () => (
@@ -47,6 +53,12 @@ const Footer = () => (
           {icon.icon}
         </a>
       ))}
+    </div>
+    <div className="copy-right">
+      <small>
+        copyright &copy; backroads travel company {new Date().getFullYear()}
+        all rights reserved
+      </small>
     </div>
   </StyledFooter>
 );
