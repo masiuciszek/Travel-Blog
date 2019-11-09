@@ -7,6 +7,7 @@ import SimpleHero from '../components/SimpleHero';
 import Banner from '../components/Banner';
 import { BtnShadow } from '../components/styled/Buttons';
 import About from '../components/home/About';
+import Services from '../components/home/Services';
 
 export default () => (
   <>
@@ -21,6 +22,7 @@ export default () => (
           </AniLink>
         </Banner>
       </SimpleHero>
+      <Services />
       <About />
     </Layout>
   </>

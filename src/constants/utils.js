@@ -1,5 +1,7 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram } from 'styled-icons/feather';
+import { Wallet, Navigation, Palette } from 'styled-icons/boxicons-regular';
+// import { FaWallet, FaTree, FaSocks } from "react-icons/fa"
 
 export const icons = [
   {
@@ -35,25 +37,23 @@ export const links = [
   },
 ];
 
-// import { FaWallet, FaTree, FaSocks } from "react-icons/fa"
-
-// export default [
-//   {
-//     icon: <FaWallet />,
-//     title: "saving money",
-//     text:
-//       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, earum. ",
-//   },
-//   {
-//     icon: <FaTree />,
-//     title: "endless hiking",
-//     text:
-//       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, earum. ",
-//   },
-//   {
-//     icon: <FaSocks />,
-//     title: "amazing comfort",
-//     text:
-//       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, earum. ",
-//   },
-// ]
+export const servicesData = [
+  {
+    icon: <Wallet size="25" />,
+    title: 'saving money',
+    text:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, earum. ',
+  },
+  {
+    icon: <Navigation size="25" />,
+    title: "endless destination's",
+    text:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, earum. ',
+  },
+  {
+    icon: <Palette size="25" />,
+    title: 'amazing comfort',
+    text:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, earum. ',
+  },
+];
