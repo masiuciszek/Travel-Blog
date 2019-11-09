@@ -22,8 +22,8 @@ export default () => (
           </AniLink>
         </Banner>
       </SimpleHero>
-      <Services />
       <About />
+      <Services />
     </Layout>
   </>
 );
