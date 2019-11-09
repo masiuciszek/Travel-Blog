@@ -14,6 +14,9 @@ body {
   background: ${props => props.theme.white};
   line-height: 1.4;
   font-size: 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 h1,
 h2,
@@ -56,14 +59,11 @@ a {
   background: transparent;
   color: ${props => props.theme.primaryColor};
 }
-/* .gatsby-image-wrapper {
-  max-height: 600px;
-  box-shadow: var(--lightShadow);
-} */
 main {
-  min-height: 100vh;
+  /* min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; */
+  flex-grow: 1 auto;
 }
 
 ul,li{

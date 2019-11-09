@@ -17,13 +17,23 @@ const StyledBanner = styled.div`
     width: 85%;
     margin: 0 auto;
     margin-bottom: 2rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
   }
   @media screen and (min-width: 768px) {
-    .banner h1 {
-      font-size: 4.5rem;
+    h1 {
+      font-size: 4rem;
     }
-    .banner p {
-      width: 70%;
+    p {
+      width: 60%;
+    }
+  }
+  @media (max-width: 308px) {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      width: 50%;
     }
   }
 `;
@@ -37,7 +47,7 @@ const Banner = ({ title, info, children }) => (
 );
 
 Banner.propTypes = {
-  children: PropTypes.array.isRequired,
+  children: PropTypes.object.isRequired,
   title: PropTypes.string,
   info: PropTypes.string,
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import defaultBg from '../images/hero.jpg';
 
 const StyledHero = styled.div`
@@ -12,4 +13,9 @@ const StyledHero = styled.div`
 `;
 
 const SimpleHero = ({ children }) => <StyledHero>{children}</StyledHero>;
+
 export default SimpleHero;
+
+SimpleHero.propTypes = {
+  children: PropTypes.object.isRequired,
+};

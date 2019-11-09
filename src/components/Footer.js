@@ -7,7 +7,7 @@ import { links, icons } from '../constants/utils';
 const StyledFooter = styled.footer`
   margin-top: auto;
   background: ${props => props.theme.mainBlack};
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
   color: ${props => props.theme.mainWhite};
   .links,
