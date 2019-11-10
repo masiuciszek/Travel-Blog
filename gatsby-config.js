@@ -1,10 +1,9 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
+  siteMetadata: {
+    title: 'BackRoads',
+    description: 'Travel Blog',
+    author: 'Marcell Ciszek Druzynski',
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-styled-components`,
@@ -12,6 +11,16 @@ module.exports = {
         // Add any options here
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
+    },
     `gatsby-plugin-transition-link`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-playground`,
   ],
 };

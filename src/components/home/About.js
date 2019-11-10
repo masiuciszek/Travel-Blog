@@ -1,9 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import Title from '../styled/Title';
 import img from '../../images/bkk1.jpg';
 import { BtnPrimary } from '../styled/Buttons';
+
+const ABOUT_QUERY = graphql`
+  query {
+    aboutImage: file(relativePath: { eq: "bkk1.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+  }
+`;
+
+const About = () => {
+  const {
+    aboutImage: { childImageSharp },
+  } = useStaticQuery(ABOUT_QUERY);
+
+  return (
+    <StyledAbout>
+      <Title title="about" subtitle="us" />
+      <Center>
+        <article className="about-img">
+          <div className="img-container">
+            {/* <img src={img} alt="nice nature" /> */}
+            <Img fluid={childImageSharp.fluid} alt="Bangkok city" />
+          </div>
+        </article>
+        <article className="about-info">
+          <h4>explore the Craziness</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore,
+            cum voluptatum. Eius.
+          </p>
+          <BtnPrimary>read more</BtnPrimary>
+        </article>
+      </Center>
+    </StyledAbout>
+  );
+};
+
+About.propTypes = {};
 
 const StyledAbout = styled.div`
   padding: 4rem 0;
@@ -66,30 +110,5 @@ const Center = styled.div`
     max-width: 1170px;
   }
 `;
-const About = () => {
-  let a;
-  return (
-    <StyledAbout>
-      <Title title="about" subtitle="us" />
-      <Center>
-        <article className="about-img">
-          <div className="img-container">
-            <img src={img} alt="nice nature" />
-          </div>
-        </article>
-        <article className="about-info">
-          <h4>explore the Craziness</h4>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore,
-            cum voluptatum. Eius.
-          </p>
-          <BtnPrimary>read more</BtnPrimary>
-        </article>
-      </Center>
-    </StyledAbout>
-  );
-};
-
-About.propTypes = {};
 
 export default About;
