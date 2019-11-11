@@ -12,27 +12,24 @@ import About from '../components/home/About';
 import Services from '../components/home/Services';
 import StyledHero from '../components/StyledHero';
 
-const Home = ({ data }) => {
-  console.log(data);
-  return (
-    <>
-      <Layout>
-        <StyledHero img={data.heroBg.childImageSharp.fluid} home="true">
-          <Banner
-            title="Exploring the nature"
-            info="traveling around the world and exploring the real you!"
-          >
-            <AniLink fade to="/tours">
-              <BtnShadow>Explore Tours</BtnShadow>
-            </AniLink>
-          </Banner>
-        </StyledHero>
-        <About />
-        <Services />
-      </Layout>
-    </>
-  );
-};
+const Home = ({ data }) => (
+  <>
+    <Layout>
+      <StyledHero img={data.heroBg.childImageSharp.fluid} home="true">
+        <Banner
+          title="Exploring the nature"
+          info="traveling around the world and exploring the real you!"
+        >
+          <AniLink fade to="/tours">
+            <BtnShadow>Explore Tours</BtnShadow>
+          </AniLink>
+        </Banner>
+      </StyledHero>
+      <About />
+      <Services />
+    </Layout>
+  </>
+);
 
 export const HOME_BACKGROUND_IMAGE_QUERY = graphql`
   query {

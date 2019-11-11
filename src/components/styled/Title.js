@@ -9,7 +9,8 @@ const StyledTitle = styled.div`
   text-transform: uppercase;
   h3 {
     color: ${props => props.theme.black};
-    font-size: 2rem;
+    font-size: 2.6rem;
+    letter-spacing: 0.35rem;
   }
   span {
     color: ${props => props.theme.primaryColor};

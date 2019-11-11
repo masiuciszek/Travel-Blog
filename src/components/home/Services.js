@@ -8,7 +8,7 @@ const ServicesStyled = styled.div`
   padding: 1.4rem 1.5rem;
   display: flex;
   flex-direction: column;
-
+  margin: 7rem 0;
   @media (min-width: 890px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
