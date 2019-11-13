@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 import StyledHero from '../components/StyledHero';
 import Layout from '../components/Layout';
 import Contact from '../components/contact/Contact';
+
+const ContactStyled = styled.div`
+  padding: 4rem 0;
+`;
 
 const ContactPage = ({ data }) => (
   <>
