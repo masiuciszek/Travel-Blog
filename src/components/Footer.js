@@ -56,7 +56,8 @@ const Footer = () => (
     </div>
     <div className="copy-right">
       <small>
-        copyright &copy; backroads travel company {new Date().getFullYear()}
+        copyright &copy; masius journey company <br />{' '}
+        {new Date().getFullYear()}
         all rights reserved
       </small>
     </div>

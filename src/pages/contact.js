@@ -21,7 +21,7 @@ const ContactPage = ({ data }) => (
 
 export const CONTACT_BACKGROUND_IMAGE_QUERY = graphql`
   query {
-    contactBG: file(relativePath: { eq: "connectBcg.jpeg" }) {
+    contactBG: file(relativePath: { eq: "bkk2.jpg" }) {
       childImageSharp {
         fluid(quality: 90, maxWidth: 4160) {
           ...GatsbyImageSharpFluid_withWebp

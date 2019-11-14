@@ -10,7 +10,7 @@ const StyledContact = styled.section`
 const FormWrapper = styled.section`
   padding: 1rem 0;
 
-  width: 60vw;
+  max-width: 60vw;
   margin: 0 auto;
   form {
     padding: 2rem 5rem;
@@ -40,9 +40,12 @@ const FormWrapper = styled.section`
       transition: ${props => props.theme.secondaryTransition};
       &:focus {
         box-shadow: 3px 2px 3px 2px #ccc;
-        transform: scale(1.04);
-        width: 50rem;
+        transform: scale(1.025);
+        width: 43rem;
       }
+    }
+    input[placeholder='message'] {
+      height: 8rem;
     }
   }
   button {
@@ -54,6 +57,51 @@ const FormWrapper = styled.section`
       top: 2px;
     }
   }
+  @media (max-width: 720px) {
+    .form-group {
+      input {
+        width: 30rem;
+        &:focus {
+          box-shadow: 3px 2px 3px 2px #ccc;
+          transform: scale(1.025);
+          width: 33rem;
+        }
+      }
+    }
+    button {
+      width: 30rem;
+    }
+  }
+  @media (max-width: 520px) {
+    .form-group {
+      input {
+        width: 20rem;
+        &:focus {
+          box-shadow: 3px 2px 3px 2px #ccc;
+          transform: scale(1.025);
+          width: 23rem;
+        }
+      }
+    }
+    button {
+      width: 20rem;
+    }
+  }
+  @media (max-width: 347px) {
+    .form-group {
+      input {
+        width: 15rem;
+        &:focus {
+          box-shadow: 3px 2px 3px 2px #ccc;
+          transform: scale(1.025);
+          width: 17rem;
+        }
+      }
+    }
+    button {
+      width: 15rem;
+    }
+  }
 `;
 
 const Contact = () => {
@@ -62,7 +110,11 @@ const Contact = () => {
     <StyledContact>
       <Title title="Contact" subtitle="us" />
       <FormWrapper>
-        <form>
+        <form
+          action="https://formspree.io/marcellciszek24@gmail.com"
+          method="POST"
+          acceptCharset="utf-8"
+        >
           <div className="form-group">
             <label htmlFor="text">
               Name

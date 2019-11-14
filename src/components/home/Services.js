@@ -22,9 +22,13 @@ const Service = styled.article`
   padding: 0.5rem;
   box-shadow: 2px 2px 3px #ccc;
   span {
-    padding: 1rem 0.5rem;
+    padding: 0.4rem 0.7rem;
+    width: 80%;
     display: inline-block;
     background: ${props => props.theme.primaryColor};
+    display: flex;
+    justify-content: center;
+    box-shadow: 3px 2px 2px #ccc;
   }
   h3 {
     font-size: 1.3rem;

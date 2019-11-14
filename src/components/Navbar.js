@@ -1,11 +1,9 @@
 // @ts-nocheck
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import styled from 'styled-components';
 import { MenuAltRight } from 'styled-icons/boxicons-regular/MenuAltRight';
 import { links, icons } from '../constants/utils';
-import logo from '../images/logo.svg';
 import useToggle from '../hooks/useToggle';
 import { fadeFromTopDown } from '../utils/animations';
 
@@ -15,7 +13,11 @@ const Navbar = () => {
   return (
     <StyledNav>
       <div className="logo-wrapper">
-        <img src={logo} alt="logo" />
+        <AniLink fade to="/">
+          <h4>
+            Masiu's <span>Journey</span>
+          </h4>
+        </AniLink>
         {show && (
           <MobileList className="mobile-list">
             {' '}
@@ -67,6 +69,15 @@ const StyledNav = styled.nav`
   animation: ${fadeFromTopDown} ease-in-out 0.5s;
   align-items: center;
   position: relative;
+  .logo-wrapper {
+    h4 {
+      border-bottom: 2px solid ${props => props.theme.primaryColor};
+      font-size: 1.4rem;
+      span {
+        color: ${props => props.theme.primaryColor};
+      }
+    }
+  }
   span {
     cursor: pointer;
   }
@@ -140,6 +151,7 @@ const MobileList = styled.ul`
     color: ${props => props.theme.primaryColor};
     transition: ${props => props.theme.mainTransition};
     &:hover {
+      color: ${props => props.theme.mainWhite};
       background: ${props => props.theme.black};
     }
   }
