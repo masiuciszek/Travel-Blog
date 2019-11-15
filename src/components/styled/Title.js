@@ -14,7 +14,8 @@ const StyledTitle = styled.div`
   }
   span {
     color: ${props => props.theme.primaryColor};
-    margin-right: 1rem;
+    /* TODO:Remove comments */
+    /* margin-right: 1rem; */
     display: block;
   }
 

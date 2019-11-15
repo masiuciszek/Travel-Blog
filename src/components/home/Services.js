@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { InsertTemplate } from 'styled-icons/icomoon';
+
 import { servicesData } from '../../constants/utils';
 
 const ServicesStyled = styled.div`
-  padding: 1.4rem 1.5rem;
+  padding: 1.4rem 3.5rem;
   display: flex;
   flex-direction: column;
-  margin: 7rem 0;
+  margin: 7rem 0 1rem 0;
+
   @media (min-width: 890px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -20,7 +21,11 @@ const ServicesStyled = styled.div`
 
 const Service = styled.article`
   padding: 0.5rem;
-  box-shadow: 2px 2px 3px #ccc;
+  box-shadow: ${props => props.theme.lightShadow};
+  /* border: 2px solid ${props => props.theme.grey}; */
+  color: ${props => props.theme.mainBlack};
+  border-radius: 1rem;
+  position: relative;
   span {
     padding: 0.4rem 0.7rem;
     width: 80%;
@@ -28,8 +33,10 @@ const Service = styled.article`
     background: ${props => props.theme.primaryColor};
     display: flex;
     justify-content: center;
-    box-shadow: 3px 2px 2px #ccc;
+    box-shadow: ${props => props.theme.lightShadow};
+    border-radius: 1rem;
   }
+
   h3 {
     font-size: 1.3rem;
     padding: 1rem 0.5rem;

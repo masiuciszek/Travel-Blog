@@ -5,12 +5,12 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Layout from '../components/Layout';
-import SimpleHero from '../components/SimpleHero';
 import Banner from '../components/Banner';
 import { BtnShadow } from '../components/styled/Buttons';
 import About from '../components/home/About';
 import Services from '../components/home/Services';
 import StyledHero from '../components/StyledHero';
+import FeaturedTours from '../components/home/FeaturedTours';
 
 const Home = ({ data }) => (
   <>
@@ -27,6 +27,7 @@ const Home = ({ data }) => (
       </StyledHero>
       <About />
       <Services />
+      <FeaturedTours />
     </Layout>
   </>
 );

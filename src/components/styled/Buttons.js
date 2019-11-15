@@ -35,3 +35,17 @@ export const BtnPrimary = styled.button`
     top: 0.1rem;
   }
 `;
+
+export const BtnCta = styled(BtnPrimary)`
+  border-radius: 1rem;
+
+  color: ${props => props.theme.black};
+  width: 12rem;
+  padding: 0.4rem 1rem;
+  box-shadow: ${props => props.theme.lightShadow};
+  &:hover {
+    background: ${props => props.theme.primaryColor};
+    color: #333;
+    box-shadow: 3px 2px 2px #333;
+  }
+`;
