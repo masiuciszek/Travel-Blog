@@ -111,7 +111,7 @@ const Contact = () => {
       <Title title="Contact" subtitle="us" />
       <FormWrapper>
         <form
-          action="https://formspree.io/marcellciszek24@gmail.com"
+          action={`https://formspree.io/${process.env.EMAIL}`}
           method="POST"
           acceptCharset="utf-8"
         >
