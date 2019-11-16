@@ -37,9 +37,8 @@ const Layout = ({ children }) => (
     </ThemeProvider>
   </>
 );
-
 Layout.propTypes = {
-  children: PropTypes.array.isRequired,
+  children: PropTypes.object.isRequired,
 };
 
 export default Layout;
