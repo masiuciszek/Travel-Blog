@@ -21,13 +21,12 @@ const StyledFeaturedTours = styled.div`
   }
 `;
 
-const Center = styled.div`
+const Grid = styled.div`
   width: 80vw;
   margin: 3rem auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-gap: 0.5rem;
 `;
 
 const GET_FEATURED_TOURS = graphql`
@@ -59,11 +58,11 @@ const FeaturedTours = () => {
   return (
     <StyledFeaturedTours>
       <Title title="Special Tours" subtitle="tours" />
-      <Center>
+      <Grid>
         {edges.map(tour => (
           <Tour key={tour.node.contentful_id} tour={tour.node} />
         ))}
-      </Center>
+      </Grid>
       <AniLink fade to="/tours">
         {' '}
         <BtnPrimary>Tours</BtnPrimary>{' '}
