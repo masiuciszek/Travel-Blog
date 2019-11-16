@@ -2,12 +2,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
+import { graphql, useStaticQuery } from 'gatsby';
+
+const GET_DEFAULT_IMG_QUERY = graphql`
+  query {
+    heroBg: file(relativePath: { eq: "hero.jpg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 4160) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`;
 
 const StyledHero = ({ img, className, children, home }) => {
-  let a;
+  const getDefaultHeroImg = useStaticQuery(GET_DEFAULT_IMG_QUERY);
+  const { fluid } = getDefaultHeroImg.heroBg.childImageSharp;
+
+
   return (
     <>
-      <BackgroundImage className={className} fluid={img} home={home}>
+      <BackgroundImage className={className} fluid={img || fluid} home={home}>
         {children}
       </BackgroundImage>
     </>

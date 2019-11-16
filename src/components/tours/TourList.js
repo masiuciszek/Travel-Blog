@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -10,7 +11,7 @@ const StyledTourList = styled.div``;
 const TourList = ({ tours }) => {
   const [toursData, setToursData] = React.useState([]);
   const [sortedTours, setSortedTours] = React.useState([]);
-  console.log(toursData);
+
   React.useEffect(() => {
     setToursData(tours.tours.edges);
     setSortedTours(tours.tours.edges);
@@ -31,5 +32,4 @@ const TourList = ({ tours }) => {
 TourList.propTypes = {
   tours: PropTypes.object.isRequired,
 };
-
 export default TourList;

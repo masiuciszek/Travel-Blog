@@ -8,14 +8,12 @@ const StyledTitle = styled.div`
   text-align: center;
   text-transform: uppercase;
   h3 {
-    color: ${props => props.theme.black};
+    color: #333;
     font-size: 2.6rem;
     letter-spacing: 0.35rem;
   }
   span {
     color: ${props => props.theme.primaryColor};
-    /* TODO:Remove comments */
-    /* margin-right: 1rem; */
     display: block;
   }
 

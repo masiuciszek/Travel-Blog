@@ -70,6 +70,9 @@ const StyledNav = styled.nav`
   align-items: center;
   position: relative;
   .logo-wrapper {
+    a:active {
+      color: #000;
+    }
     h4 {
       border-bottom: 2px solid ${props => props.theme.primaryColor};
       font-size: 1.4rem;

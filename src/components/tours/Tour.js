@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Image from 'gatsby-image';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { Map } from 'styled-icons/boxicons-regular';
+import { useStaticQuery, graphql } from 'gatsby';
 import { BtnShadow } from '../styled/Buttons';
 
 const StyledTour = styled.article`
@@ -60,13 +61,29 @@ const Footer = styled.div`
   }
 `;
 
+const GET_DEFAULT_IMG_QUERY = graphql`
+  query {
+    getDefaultImg: file(relativePath: { eq: "hero.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
+
 const Tour = ({ tour }) => {
   const { name, price, slug, country, images, days } = tour;
+  const getImage = useStaticQuery(GET_DEFAULT_IMG_QUERY);
+  const img = getImage.getDefaultImg.childImageSharp.fluid;
+
+  const mainImg = images ? images[0].fluid : img;
 
   return (
     <StyledTour>
       <div className="img-wrapper">
-        <Image fluid={images[0].fluid} alt="tour" />
+        <Image fluid={mainImg} alt="tour" />
       </div>
       <AniLink fade to={`/tours/${slug}`}>
         <BtnShadow id="details">Details</BtnShadow>
@@ -78,14 +95,14 @@ const Tour = ({ tour }) => {
             {' '}
             <Map size="25" /> {country}
           </h4>
-          <div className="details">
-            <p>
-              {days} Day's {'   '}
-            </p>{' '}
-            <p>
-              {'  '} <span>from</span> ${price}{' '}
-            </p>
-          </div>
+        </div>
+        <div className="details">
+          <p>
+            {days} Day's {'   '}
+          </p>{' '}
+          <p>
+            {'  '} <span>from</span> ${price}{' '}
+          </p>
         </div>
       </Footer>
     </StyledTour>
@@ -93,7 +110,15 @@ const Tour = ({ tour }) => {
 };
 
 Tour.propTypes = {
-  tour: PropTypes.object.isRequired,
+  tour: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    days: PropTypes.number.isRequired,
+    slug: PropTypes.string.isRequired,
+    images: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }),
 };
 
+Tour.defaultProps = {};
 export default Tour;
