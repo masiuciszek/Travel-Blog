@@ -21,7 +21,7 @@ const StyledFeaturedTours = styled.div`
   }
 `;
 
-const Grid = styled.div`
+export const Grid = styled.div`
   width: 80vw;
   margin: 3rem auto;
   display: grid;

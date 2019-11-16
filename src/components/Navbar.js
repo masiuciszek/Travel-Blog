@@ -73,6 +73,7 @@ const StyledNav = styled.nav`
     h4 {
       border-bottom: 2px solid ${props => props.theme.primaryColor};
       font-size: 1.4rem;
+      color: 2px solid ${props => props.theme.black};
       span {
         color: ${props => props.theme.primaryColor};
       }

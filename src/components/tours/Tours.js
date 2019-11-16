@@ -1,12 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
+import TourList from './TourList';
+
+const TOURS_QUERY = graphql`
+  query {
+    tours: allContentfulTour {
+      edges {
+        node {
+          name
+          price
+          slug
+          country
+          contentful_id
+          days
+          images {
+            fluid {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 const Tours = () => {
-  let a;
+  const toursData = useStaticQuery(TOURS_QUERY);
   return (
-    <div>
-      <h1>Tours</h1>
-    </div>
+    <>
+      <TourList tours={toursData} />
+    </>
   );
 };
 

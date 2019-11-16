@@ -43,6 +43,9 @@ const Footer = styled.div`
     margin: 1rem 0;
   }
   .info {
+    h4 {
+      color: ${props => props.theme.primaryColor};
+    }
   }
   .details {
     display: flex;

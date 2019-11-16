@@ -14,7 +14,7 @@ export const theme = {
   offWhite: '#EDEDED',
   maxWidth: '1000px',
   bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)',
-  primaryColor: '#9575CD',
+  primaryColor: '#1BBC9B',
   mainWhite: '#fff',
   offWhite2: '#f7f7f7',
   mainBlack: '#222',

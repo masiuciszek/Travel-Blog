@@ -3,15 +3,17 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Layout from '../components/Layout';
 import StyledHero from '../components/StyledHero';
+import Tours from '../components/tours/Tours';
 
-const Tours = ({ data }) => (
+const ToursPage = ({ data }) => (
   <>
     <Layout>
       <StyledHero img={data.heroBg.childImageSharp.fluid} />
+      <Tours />
     </Layout>
   </>
 );
-export default Tours;
+export default ToursPage;
 
 export const TOURS_BACKGROUND_IMAGE_QUERY = graphql`
   query {
@@ -25,6 +27,6 @@ export const TOURS_BACKGROUND_IMAGE_QUERY = graphql`
   }
 `;
 
-Tours.propTypes = {
+ToursPage.propTypes = {
   data: PropTypes.object.isRequired,
 };
