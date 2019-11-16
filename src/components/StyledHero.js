@@ -20,7 +20,6 @@ const StyledHero = ({ img, className, children, home }) => {
   const getDefaultHeroImg = useStaticQuery(GET_DEFAULT_IMG_QUERY);
   const { fluid } = getDefaultHeroImg.heroBg.childImageSharp;
 
-
   return (
     <>
       <BackgroundImage className={className} fluid={img || fluid} home={home}>
@@ -36,7 +35,7 @@ export default styled(StyledHero)`
   min-height: ${props => (props.home ? `calc(100vh - 62px)` : `50vh`)};
   background: ${props =>
     props.home
-      ? `linear-gradient(rgba(27, 188, 155, 0.7), rgba(0, 0, 0, 0.7))`
+      ? `linear-gradient(rgba(36, 64, 111, 0.7), rgba(9, 1, 00, 0.7))`
       : `none`};
   background-position: center;
   background-size: cover;

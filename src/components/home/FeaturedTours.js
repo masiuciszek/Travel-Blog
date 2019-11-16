@@ -23,10 +23,13 @@ const StyledFeaturedTours = styled.div`
 
 export const Grid = styled.div`
   width: 80vw;
-  margin: 3rem auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  grid-gap: 0.5rem;
+  margin: 3rem auto;
+  align-items: center;
+  justify-content: space-evenly;
+  align-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+  grid-gap: 1.5rem;
 `;
 
 const GET_FEATURED_TOURS = graphql`

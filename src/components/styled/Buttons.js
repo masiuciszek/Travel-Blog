@@ -11,8 +11,7 @@ export const BtnShadow = styled.span`
   letter-spacing: 0.2rem;
   &:hover {
     background: ${props => props.theme.primaryColor};
-    color: #333;
-  }
+    color: ${props => props.theme.mainWhite};
 `;
 
 export const BtnPrimary = styled.button`
@@ -28,7 +27,7 @@ export const BtnPrimary = styled.button`
   box-shadow: 1px 1px 2px #333;
   &:hover {
     background: ${props => props.theme.primaryColor};
-    color: #333;
+    color: ${props => props.theme.mainWhite};
     box-shadow: 3px 2px 2px #333;
   }
   &:active {

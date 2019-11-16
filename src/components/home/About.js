@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import Title from '../styled/Title';
-import img from '../../images/bkk1.jpg';
 import { BtnPrimary } from '../styled/Buttons';
 
 const ABOUT_QUERY = graphql`
@@ -40,7 +40,9 @@ const About = () => {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore,
             cum voluptatum. Eius.
           </p>
-          <BtnPrimary>read more</BtnPrimary>
+          <AniLink fade to="/tours">
+            <BtnPrimary>read more</BtnPrimary>
+          </AniLink>
         </article>
       </Center>
     </StyledAbout>

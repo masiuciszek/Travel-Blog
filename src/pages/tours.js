@@ -9,7 +9,7 @@ import Title from '../components/styled/Title';
 const ToursPage = ({ data }) => (
   <>
     <Layout>
-      <StyledHero img={data.heroBg.childImageSharp.fluid}>
+      <StyledHero img={data.heroBg.childImageSharp.fluid} primary>
         <Title title="Explore the Journey" />
       </StyledHero>
       <Tours />
