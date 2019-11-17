@@ -16,7 +16,8 @@ const TOURS_QUERY = graphql`
           days
           images {
             fluid {
-              ...GatsbyContentfulFluid_tracedSVG
+              # ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
         }
