@@ -3,16 +3,18 @@ import PropTypes from 'prop-types';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import Layout from '../components/Layout';
 import StyledHero from '../components/StyledHero';
+import BlogList from '../components/blog/BlogList';
 
-const Blog = ({ data }) => (
+const BlogPage = ({ data }) => (
   <>
     <Layout>
       <StyledHero img={data.heroBg.childImageSharp.fluid} />
+      <BlogList />
     </Layout>
   </>
 );
 
-Blog.propTypes = {
+BlogPage.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
@@ -28,4 +30,4 @@ export const BLOG_BACKGROUND_IMAGE_QUERY = graphql`
   }
 `;
 
-export default Blog;
+export default BlogPage;

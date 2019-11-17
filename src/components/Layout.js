@@ -15,6 +15,7 @@ export const theme = {
   maxWidth: '1000px',
   bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)',
   primaryColor: '#ff7523',
+  primaryShadow: 'rgba(217,81,0,0.6)',
   mainWhite: '#fff',
   offWhite2: '#f7f7f7',
   mainBlack: '#222',
