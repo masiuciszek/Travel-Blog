@@ -10,11 +10,11 @@ import { BtnShadow } from '../components/styled/Buttons';
 const StyledError = styled.div`
   background-image: linear-gradient(
     to left top,
-    #3fd0d4,
-    #35bec2,
-    #2cadb0,
-    #229c9f,
-    #188b8e
+    #3233,
+    #353223,
+    #2ccccc,
+    #eee323,
+    #3233
   );
   min-height: calc(100vh - 62px);
   display: flex;
