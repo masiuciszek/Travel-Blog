@@ -5,15 +5,15 @@ import { Wallet, Navigation, Palette } from 'styled-icons/boxicons-regular';
 
 export const icons = [
   {
-    icon: <Facebook size="30" />,
+    icon: <Facebook size="35" />,
     url: 'https://www.marcellable.com/',
   },
   {
-    icon: <Twitter size="30" />,
+    icon: <Twitter size="35" />,
     url: 'https://twitter.com/CiszekMarcell',
   },
   {
-    icon: <Instagram size="30" />,
+    icon: <Instagram size="35" />,
     url: 'https://www.instagram.com/masiuciszek/?hl=sv',
   },
 ];

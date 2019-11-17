@@ -9,6 +9,7 @@ const ServicesStyled = styled.div`
   display: flex;
   flex-direction: column;
   margin: 7rem 0 1rem 0;
+  background: ${props => props.theme.grey};
 
   @media (min-width: 890px) {
     display: grid;
@@ -22,13 +23,13 @@ const ServicesStyled = styled.div`
 const Service = styled.article`
   padding: 0.5rem;
   box-shadow: ${props => props.theme.lightShadow};
-  /* border: 2px solid ${props => props.theme.grey}; */
-  color: ${props => props.theme.mainBlack};
+  border: 2px solid ${props => props.theme.mainWhite};
+  color: ${props => props.theme.mainWhite};
   border-radius: 1rem;
   position: relative;
   span {
     padding: 0.4rem 0.7rem;
-    width: 80%;
+    width: 30%;
     display: inline-block;
     background: ${props => props.theme.primaryColor};
     display: flex;

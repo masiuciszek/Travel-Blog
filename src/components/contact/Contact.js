@@ -8,8 +8,9 @@ const StyledContact = styled.section`
   padding: 1rem 0;
 `;
 const FormWrapper = styled.section`
+  background: ${props => props.theme.grey};
   padding: 1rem 0;
-
+  border-radius: 1rem;
   max-width: 60vw;
   margin: 0 auto;
   form {
@@ -25,7 +26,7 @@ const FormWrapper = styled.section`
       display: block;
       margin-bottom: 0.5rem;
       font-size: 1.4rem;
-
+      color: ${props => props.theme.mainWhite};
       margin: 1rem 0;
     }
     input {
@@ -36,10 +37,10 @@ const FormWrapper = styled.section`
       font-size: 1rem;
       border: 2px solid ${props => props.theme.primaryColor};
       border-radius: 1rem;
-      box-shadow: 2px 2px 3px #ccc;
+      box-shadow: ${props => props.theme.lightShadow};
       transition: ${props => props.theme.secondaryTransition};
       &:focus {
-        box-shadow: 3px 2px 3px 2px #ccc;
+        box-shadow: ${props => props.theme.darkShadow};
         transform: scale(1.025);
         width: 43rem;
       }
@@ -104,37 +105,34 @@ const FormWrapper = styled.section`
   }
 `;
 
-const Contact = () => {
-  let a;
-  return (
-    <StyledContact>
-      <Title title="Contact" subtitle="us" />
-      <FormWrapper>
-        <form
-          action={`https://formspree.io/${process.env.EMAIL}`}
-          method="POST"
-          acceptCharset="utf-8"
-        >
-          <div className="form-group">
-            <label htmlFor="text">
-              Name
-              <input type="text" placeholder="name" />
-            </label>
-            <label htmlFor="text">
-              Email
-              <input type="email" placeholder="email" />
-            </label>
-            <label htmlFor="text">
-              Message
-              <input type="text" placeholder="message" />
-            </label>
-          </div>
-          <BtnPrimary type="submit">Submit</BtnPrimary>
-        </form>
-      </FormWrapper>
-    </StyledContact>
-  );
-};
+const Contact = () => (
+  <StyledContact>
+    <Title title="Contact" subtitle="us" />
+    <FormWrapper>
+      <form
+        action={`https://formspree.io/${process.env.EMAIL}`}
+        method="POST"
+        acceptCharset="utf-8"
+      >
+        <div className="form-group">
+          <label htmlFor="text">
+            Name
+            <input type="text" placeholder="name" />
+          </label>
+          <label htmlFor="text">
+            Email
+            <input type="email" placeholder="email" />
+          </label>
+          <label htmlFor="text">
+            Message
+            <input type="text" placeholder="message" />
+          </label>
+        </div>
+        <BtnPrimary type="submit">Submit</BtnPrimary>
+      </form>
+    </FormWrapper>
+  </StyledContact>
+);
 
 Contact.propTypes = {};
 
