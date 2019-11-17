@@ -64,7 +64,6 @@ const StyledBlogCard = styled.article`
 `;
 
 const BlogCard = ({ blog }) => {
-  console.log(blog);
   const {
     image: { fluid },
     title,

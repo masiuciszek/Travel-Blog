@@ -8,11 +8,12 @@ const StyledContact = styled.section`
   padding: 1rem 0;
 `;
 const FormWrapper = styled.section`
-  background: ${props => props.theme.grey};
+
   padding: 1rem 0;
   border-radius: 1rem;
-  max-width: 60vw;
+  max-width: 70vw;
   margin: 0 auto;
+
   form {
     padding: 2rem 5rem;
     display: flex;

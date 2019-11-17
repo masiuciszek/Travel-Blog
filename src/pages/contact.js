@@ -14,7 +14,9 @@ const ContactPage = ({ data }) => (
   <>
     <Layout>
       <StyledHero img={data.contactBG.childImageSharp.fluid} />
-      <Contact />
+      <ContactStyled>
+        <Contact />
+      </ContactStyled>
     </Layout>
   </>
 );
