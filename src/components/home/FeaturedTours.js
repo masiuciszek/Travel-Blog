@@ -6,7 +6,6 @@ import styled from 'styled-components';
 import Tour from '../tours/Tour';
 import Title from '../styled/Title';
 import { BtnPrimary } from '../styled/Buttons';
-import Tours from '../tours/Tours';
 
 const StyledFeaturedTours = styled.div`
   padding: 4rem 0;
