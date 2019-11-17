@@ -32,6 +32,10 @@ export const links = [
     text: 'blog',
   },
   {
+    path: '/blog-list',
+    text: 'blog list',
+  },
+  {
     path: '/contact',
     text: 'contact',
   },

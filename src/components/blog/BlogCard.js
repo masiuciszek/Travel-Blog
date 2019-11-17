@@ -11,6 +11,7 @@ const StyledBlogCard = styled.article`
   position: relative;
   .img-wrapper {
     height: 100%;
+
     h5 {
       background: ${props => props.theme.primaryShadow};
       position: absolute;
@@ -21,16 +22,8 @@ const StyledBlogCard = styled.article`
       border-radius: 0.4rem;
     }
     &:hover {
-      /* opacity: 0.3; */
-      background: ${props => props.theme.primaryShadow};
-      &::after {
-        content: '';
-        background: ${props => props.theme.primaryShadow};
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        position: absolute;
+      .gatsby-image-wrapper {
+        opacity: 0.3;
       }
     }
   }
@@ -56,6 +49,7 @@ const StyledBlogCard = styled.article`
     }
   }
   &:hover {
+    box-shadow: ${props => props.theme.darkShadow};
     .read-more-link {
       display: block;
       z-index: 3;
@@ -69,7 +63,6 @@ const BlogCard = ({ blog }) => {
     title,
     published,
     slug,
-    id,
   } = blog;
 
   return (
