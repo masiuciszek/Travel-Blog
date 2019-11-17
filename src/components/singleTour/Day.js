@@ -5,7 +5,8 @@ import { ArrowDown } from 'styled-icons/fa-solid';
 import useToggle from '../../hooks/useToggle';
 import { fadeIn } from '../../utils/animations';
 
-const StyledDay = styled.div`
+// TODO: article vs DIV
+const StyledDay = styled.article`
   padding: 0.2rem 0;
   h3 {
     width: 100%;
