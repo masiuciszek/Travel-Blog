@@ -25,11 +25,12 @@ const BlogListTemplateStyled = styled.section`
     flex-wrap: wrap;
     justify-content: space-between;
     .link,
-    .link-active {
+    .link-active,
+    .prev-next {
       background: ${props => props.theme.black};
       color: ${props => props.theme.mainWhite};
       width: 3rem;
-      height: 3rem;
+      height: 2rem;
       box-shadow: ${props => props.theme.lightShadow};
       transition: ${props => props.theme.quickTransition};
       text-align: center;
@@ -47,13 +48,26 @@ const BlogListTemplateStyled = styled.section`
       color: ${props => props.theme.black};
       border: 2px solid ${props => props.theme.black};
     }
+    .prev-next {
+      width: 5rem;
+    }
+    .dont-show {
+      display: none;
+    }
   }
 `;
 
 const BlogListTemplate = ({ data, pageContext }) => {
   const { edges } = data.posts;
   const { currentPage, numOfPages } = pageContext;
-  console.log(numOfPages);
+
+  const isFirstPage = currentPage === 1;
+  const isLastPage = currentPage === numOfPages;
+
+  const prevPage =
+    currentPage - 1 === 1 ? `/blog-list` : `/blog-list/${currentPage - 1}`;
+  const nextPage = `/blog-list/${currentPage + 1}`;
+
 
   return (
     <Layout>
@@ -65,6 +79,11 @@ const BlogListTemplate = ({ data, pageContext }) => {
           ))}
         </div>
         <section className="links">
+          {!isFirstPage && (
+            <AniLink fade to={prevPage} className="link prev-next">
+              ← Prev
+            </AniLink>
+          )}
           {Array.from({ length: numOfPages }, (_, i) => (
             <AniLink
               fade
@@ -74,6 +93,11 @@ const BlogListTemplate = ({ data, pageContext }) => {
               {i + 1}
             </AniLink>
           ))}
+          {!isLastPage && (
+            <AniLink fade to={nextPage} className="link prev-next">
+              Next →
+            </AniLink>
+          )}
         </section>
       </BlogListTemplateStyled>
     </Layout>

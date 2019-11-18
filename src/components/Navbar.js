@@ -73,6 +73,9 @@ const StyledNav = styled.nav`
     a:active {
       color: #000;
     }
+    a {
+      color: ${props => props.theme.grey};
+    }
     h4 {
       border-bottom: 2px solid ${props => props.theme.primaryColor};
       font-size: 1.4rem;
