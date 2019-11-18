@@ -18,12 +18,43 @@ const BlogListTemplateStyled = styled.section`
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
   }
+  .links {
+    width: 80vw;
+    margin: 0 auto 5rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .link,
+    .link-active {
+      background: ${props => props.theme.black};
+      color: ${props => props.theme.mainWhite};
+      width: 3rem;
+      height: 3rem;
+      box-shadow: ${props => props.theme.lightShadow};
+      transition: ${props => props.theme.quickTransition};
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.2rem;
+      &:hover {
+        box-shadow: ${props => props.theme.darkShadow};
+        background: ${props => props.theme.primaryColor};
+      }
+    }
+    .link-active {
+      background: ${props => props.theme.mainWhite};
+      color: ${props => props.theme.black};
+      border: 2px solid ${props => props.theme.black};
+    }
+  }
 `;
 
-const BlogListTemplate = ({ data }) => {
+const BlogListTemplate = ({ data, pageContext }) => {
   const { edges } = data.posts;
+  const { currentPage, numOfPages } = pageContext;
+  console.log(numOfPages);
 
-  console.log(edges);
   return (
     <Layout>
       <BlogListTemplateStyled>
@@ -33,6 +64,17 @@ const BlogListTemplate = ({ data }) => {
             <BlogCard key={blog.node.id} blog={blog.node} />
           ))}
         </div>
+        <section className="links">
+          {Array.from({ length: numOfPages }, (_, i) => (
+            <AniLink
+              fade
+              to={`/blog-list/${i === 0 ? '' : i + 1}`}
+              className={i + 1 === currentPage ? 'link-active' : 'link'}
+            >
+              {i + 1}
+            </AniLink>
+          ))}
+        </section>
       </BlogListTemplateStyled>
     </Layout>
   );
@@ -68,6 +110,13 @@ export const pageQuery = graphql`
 BlogListTemplate.propTypes = {
   data: PropTypes.shape({
     posts: PropTypes.objectOf(PropTypes.array),
+  }),
+  pageContext: PropTypes.shape({
+    currentPage: PropTypes.number,
+    isCreatedByStatefulCreatePages: PropTypes.bool,
+    limit: PropTypes.number,
+    numOfPages: PropTypes.number,
+    skip: PropTypes.number,
   }),
 };
 export default BlogListTemplate;
