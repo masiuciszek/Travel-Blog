@@ -10,12 +10,16 @@ const StyledBlogCard = styled.article`
   transition: ${props => props.theme.mainTransition};
   position: relative;
   .img-wrapper {
-    height: 100%;
+    /* height: 100%; */
+    /* display: flex; */
 
     h5 {
       background: ${props => props.theme.primaryShadow};
       position: absolute;
-      top: 6rem;
+      top: 7rem;
+      top: 60%;
+      /* left: 35%; */
+      transform: translate(2%, -50%);
       color: ${props => props.theme.mainWhite};
       padding: 0.3rem 0;
       width: 12rem;
@@ -34,6 +38,7 @@ const StyledBlogCard = styled.article`
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
+
     span {
       opacity: 1;
       padding: 0.3rem 0.5rem;

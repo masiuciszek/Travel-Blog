@@ -12,8 +12,8 @@ const StyledError = styled.div`
     to left top,
     #3233,
     #353223,
-    #2ccccc,
-    #eee323,
+    rgba(217, 81, 0, 0.6),
+    #d95100,
     #3233
   );
   min-height: calc(100vh - 62px);
