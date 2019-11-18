@@ -4,9 +4,13 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'BackRoads',
+    title: "Marcell's TravelBlog",
     description: 'Travel Blog',
     author: 'Marcell Ciszek Druzynski',
+    twitterUsername: '@CiszekMarcell',
+    // image in my static folder, for the twittercard
+    image: '/bkk1.jpg',
+    siteUrl: 'https://marcell-ciszek-travel-blog.netlify.com',
   },
   plugins: [
     {
@@ -33,5 +37,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-playground`,
+    `gatsby-plugin-react-helmet`,
   ],
 };
