@@ -6,6 +6,7 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import Layout from '../components/Layout';
 import Banner from '../components/Banner';
 import { BtnShadow } from '../components/styled/Buttons';
+import Seo from '../components/Seo';
 
 const StyledError = styled.div`
   background-image: linear-gradient(
@@ -24,6 +25,7 @@ const StyledError = styled.div`
 
 const ErrorPage = () => (
   <Layout>
+    <Seo title="404" description="Dead End Please Had Back, 404 Page!" />
     <StyledError>
       <Banner title="ooopss , page not found">
         <AniLink fade to="/">

@@ -4,10 +4,12 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import Layout from '../components/Layout';
 import StyledHero from '../components/StyledHero';
 import BlogList from '../components/blog/BlogList';
+import Seo from '../components/Seo';
 
 const BlogPage = ({ data }) => (
   <>
     <Layout>
+      <Seo title="Blog" description="Stories" />
       <StyledHero img={data.heroBg.childImageSharp.fluid} />
       <BlogList />
     </Layout>

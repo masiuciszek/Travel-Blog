@@ -11,10 +11,12 @@ import About from '../components/home/About';
 import Services from '../components/home/Services';
 import StyledHero from '../components/StyledHero';
 import FeaturedTours from '../components/home/FeaturedTours';
+import Seo from '../components/Seo';
 
 const Home = ({ data }) => (
   <>
     <Layout>
+      <Seo title="Home" description="Main Page" />
       <StyledHero img={data.heroBg.childImageSharp.fluid} home="true">
         <Banner
           title="Exploring the nature"

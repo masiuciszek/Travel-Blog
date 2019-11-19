@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import StyledHero from '../components/StyledHero';
 import Layout from '../components/Layout';
 import Contact from '../components/contact/Contact';
+import Seo from '../components/Seo';
 
 const ContactStyled = styled.div`
   padding: 4rem 0;
@@ -13,6 +14,7 @@ const ContactStyled = styled.div`
 const ContactPage = ({ data }) => (
   <>
     <Layout>
+      <Seo title="Contact" description="Contact Us" />
       <StyledHero img={data.contactBG.childImageSharp.fluid} />
       <ContactStyled>
         <Contact />
