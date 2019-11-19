@@ -47,13 +47,22 @@ const Seo = ({ title, description, pathname, image, article }) => {
       <meta name="description" content={description || defaultDescription} />
       <meta name="image" content={defaultImage} />
       {siteUrl && <meta property="og:url" content={siteUrl} />}
+
       {(article ? true : null) && <meta property="og:type" content="article" />}
       {seo.title && <meta property="og:title" content={seo.title} />}
       {seo.description && (
         <meta property="og:description" content={seo.description} />
       )}
       {seo.image && <meta property="og:image" content={seo.image} />}
-
+      {/** Facebook */}
+      <meta property="og:url" content={siteUrl} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={defaultTitle} />
+      <meta property="og:description" content={defaultDescription} />
+      <meta property="og:image" content={`${siteUrl}${image}`} />
+      <meta property="og:image:width" content="400" />
+      <meta property="og:image:height" content="300" />
+      {/** Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       {twitterUsername && (
         <meta name="twitter:creator" content={twitterUsername} />
